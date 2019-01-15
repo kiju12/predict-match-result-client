@@ -1,16 +1,11 @@
-<h1 style="color: deeppink; text-align: center">
-  Główny komponent aplikacji
-</h1>
+<div>
+  <button routerLink="/main">Predykcja</button>
+  <button routerLink="/add-match">Dodaj mecze dwóch drużyn</button>
+  <button routerLink="/add-team">Dodaj drużyne</button>
+</div>
 
-<p class="text-center">
-  Tutaj załączycie znacznik do rutera, który będzie rutował pomiędzy waszymi komponentami na podstawie URL
-</p>
+<router-outlet></router-outlet>
 
-<p>Przykład pobierania drużyn z backendu: </p>
-<button (click)="loadTeams()">Pobierz drużyny</button>
-<button (click)="deleteTeams()">Skasuj drużyny</button>
-
-<div *ngFor="let team of teams; let i = index">
-  <img [src]="team.linkToImage"/>
-  {{i+1}}. ID = {{team.id}} | Nazwa drużyny = {{team.name}}
+<div class="help-border text-center">
+  footer z pliku app.component.html
 </div>

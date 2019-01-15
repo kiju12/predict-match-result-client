@@ -1,0 +1,33 @@
+<div class="row">
+
+  <div class="col-4 offset-1 p-0 ">
+    <label for="homeTeamSelect">Drużyna domowa:</label>
+    <select id="homeTeamSelect"
+            [(ngModel)]="homeTeamId"
+            (change)="onHomeTeamSelectChange()"
+            [disabled]="disable"
+            style="width: 100%">
+      <option selected [value]="0">-</option>
+      <option *ngFor="let team of teams" [value]="team.id" [disabled]="team.selected">
+        {{team.name}}
+      </option>
+    </select>
+  </div>
+
+  <div class="col-2 text-center">VS</div>
+
+  <div class="col-4 p-0">
+    <label for="awayTeamSelect">Drużyna wyjazdowa:</label>
+    <select id="awayTeamSelect"
+            [(ngModel)]="awayTeamId"
+            (change)="onAwayTeamSelectChange()"
+            [disabled]="disable"
+            style="width: 100%">
+      <option selected [value]="0">-</option>
+      <option *ngFor="let team of teams" [value]="team.id" [disabled]="team.selected">
+        {{team.name}}
+      </option>
+    </select>
+  </div>
+
+</div>

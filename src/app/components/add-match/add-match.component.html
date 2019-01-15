@@ -1,0 +1,38 @@
+<ng-container *ngIf="matchesSaved">
+  <div class="text-center">Mecze zapisane</div>
+</ng-container>
+
+<ng-container *ngIf="teamsLoading; else addInterface">
+  <div class="text-center">Ładowanie drużyn</div>
+</ng-container>
+
+<ng-template #addInterface>
+  <app-team-select
+    [teams]="teams"
+    (homeSelectChange)="onHomeTeamSelectChange($event)"
+    (awaySelectChange)="onAwayTeamSelectChange($event)"
+    [resetEvent]="resetEvent">
+  </app-team-select>
+
+  <div class="text-center">
+      <input [(ngModel)]="homeGoals" (keyup.enter)="add()" type="number" style="width: 50px" #homeInput/>
+      -
+      <input [(ngModel)]="awayGoals" (keyup.enter)="add()" type="number" style="width: 50px"/>
+  </div>
+
+  <div class="text-center">
+    <button (click)="add()">Dodaj</button>
+  </div>
+
+  <div *ngIf="matchesData.length !== 0" class="text-center">
+    <div *ngFor="let matchData of matchesData" class="text-center help-border">
+      {{matchData.homeGoals}}-{{matchData.awayGoals}}
+      <button (click)="remove(matchData)">Usuń</button>
+    </div>
+
+    <button class="m-2" (click)="send()" [disabled]="homeTeamId === 0 || awayTeamId === 0">Wyślij</button>
+  </div>
+
+</ng-template>
+
+

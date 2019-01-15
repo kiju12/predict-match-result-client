@@ -1,0 +1,39 @@
+<ng-container *ngIf="fetchingInProgress">
+  <div class="text-center">Pobranie danych o drużynie z bazy EA SPORTS</div>
+</ng-container>
+
+<ng-container *ngIf="fetchedTeam">
+  <div class="text-center">
+    <h1>Dodano nową drużynę!</h1>
+    <div>
+      <div><img [src]="fetchedTeam.linkToImage"/></div>
+      <div>{{fetchedTeam.name}}</div>
+    </div>
+    <button (click)="reset()">Powrót</button>
+  </div>
+
+</ng-container>
+
+<ng-container *ngIf="fetchError && !fetchingInProgress">
+  <div class="text-center">Brak drużyny o podanym ID</div>
+</ng-container>
+
+<ng-container *ngIf="!fetchedTeam && !fetchingInProgress">
+  <div class="text-center">
+
+    <div class="text-center">Identyfikator drużyny FUT</div>
+    <input id="fifaIdInput" [(ngModel)]="fifaId" type="number" style="width: 50px"/>
+    <div>Identyfikator musi być większy od 0</div>
+
+    <div class="text-center">
+      <div>Formacja</div>
+      <input [(ngModel)]="defNumber" type="number" style="width: 50px"/> -
+      <input [(ngModel)]="helpNumber" type="number" style="width: 50px"/> -
+      <input [(ngModel)]="attNumber" type="number" style="width: 50px"/>
+      <div>OBR-POM-ATT</div>
+    </div>
+
+    <button (click)="fetchTeam()" [disabled]="isNotValid()">Pobierz drużynę</button>
+
+  </div>
+</ng-container>
