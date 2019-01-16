@@ -3,7 +3,7 @@
 </ng-container>
 
 <ng-container *ngIf="teamsLoading; else addInterface">
-  <div class="text-center">Ładowanie drużyn</div>
+  <div  class="bg-secondary text-center"> <font color="orange"><h2>Ładowanie drużyn</h2></font></div>
 </ng-container>
 
 <ng-template #addInterface>
@@ -16,12 +16,12 @@
 
   <div class="text-center">
       <input [(ngModel)]="homeGoals" (keyup.enter)="add()" type="number" style="width: 50px" #homeInput/>
-      -
+      <font color="orange"><b>-</b> </font>
       <input [(ngModel)]="awayGoals" (keyup.enter)="add()" type="number" style="width: 50px"/>
   </div>
 
-  <div class="text-center">
-    <button (click)="add()">Dodaj</button>
+  <div class="text-center" style="margin-top:10px;">
+    <button class = "btn btn-secondary" (click)="add()"><font color="orange">Dodaj</font></button>
   </div>
 
   <div *ngIf="matchesData.length !== 0" class="text-center">
