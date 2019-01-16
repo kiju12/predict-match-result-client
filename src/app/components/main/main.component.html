@@ -1,5 +1,5 @@
 
-
+<div class="container" style="background-color:grey;">
 
 <!--komunikat podczas ladowania druzyn START-->
 <ng-container *ngIf="teamLoading; else predictInterface">
@@ -25,7 +25,7 @@
   <!--przycisk do typowania START-->
   <ng-template #predictButton>
     <div class="text-center">
-      <button (click)="predict()" [disabled]="homeTeamId === 0 || awayTeamId === 0">Typuj</button>
+      <button class="btn btn-secondary" (click)="predict()" [disabled]="homeTeamId === 0 || awayTeamId === 0"><font color="orange">Typuj</font></button>
     </div>
   </ng-template>
   <!--przycisk do typowania END-->
@@ -40,19 +40,20 @@
 
 
   <!--Dane o drużynach START-->
-  <div class="row">
+ 
 
     <!--komunikat o braku wyboru druzyny START-->
     <ng-template #teamNotSelected>
-      <div class="text-center">
-        Nie wybrano drużyny
-      </div>
+      
+       <div class="bg-secondary"style="border: 10px;padding:5px; border-radius: 25px;">
+        <font color="orange">Nie wybrano drużyny</font>
+      </div> 
     </ng-template>
     <!--komunikat o braku wyboru druzyny END-->
-
+    <div class="row text-center">
     
     <!--lewa druzyna (HOME) START-->
-    <div class="col-6" style="margin-top:30px">
+    <div class="col-6" style="margin-top:20px">
       <ng-container *ngIf="homeTeamData; else teamNotSelected">
 
         <div class="mx-auto " style="width:150px; height:150px">
@@ -80,7 +81,7 @@
 
 
     <!--prawa druzyna (AWAY) START-->
-    <div class="col-6 " style="margin-top:30px">
+    <div class="col-6 " style="margin-top:20px">
       <ng-container *ngIf="awayTeamData; else teamNotSelected">
 
         <div class="mx-auto " style="width:150px; height:150px">
@@ -111,5 +112,5 @@
 
 </ng-template>
 <!--Zawartość strony po zaladowaniu druzyn END-->
-
+</div>
 
