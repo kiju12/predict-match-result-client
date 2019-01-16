@@ -1,5 +1,4 @@
 <div class="container" style="background-color:grey;margin-top:15px;">
-
 <ng-container *ngIf="matchesSaved">
   <div class="text-center">Mecze zapisane</div>
 </ng-container>
@@ -25,14 +24,14 @@
   <div class="text-center" style="margin-top:10px;">
     <button class = "btn btn-secondary" (click)="add()"><font color="orange">Dodaj</font></button>
   </div>
-
-  <div *ngIf="matchesData.length !== 0" class="text-center">
-    <div *ngFor="let matchData of matchesData" class="text-center help-border">
+<div class="text-center">
+  <div style="margin: auto;" *ngIf="matchesData.length !== 0" >
+    <div style="margin-bottom: 5px; max-width: 150px"*ngFor="let matchData of matchesData" class="text-center help-border">
       {{matchData.homeGoals}}-{{matchData.awayGoals}}
-      <button (click)="remove(matchData)">Usuń</button>
+      <button  class = "btn btn-secondary" (click)="remove(matchData)"><font color="orange">Usuń</font></button>
     </div>
-
-    <button class="m-2" (click)="send()" [disabled]="homeTeamId === 0 || awayTeamId === 0">Wyślij</button>
+  </div>
+    <button class = "btn btn-secondary" (click)="send()" [disabled]="homeTeamId === 0 || awayTeamId === 0"><font color="orange">Wyślij</font></button>
   </div>
 
 </ng-template>
