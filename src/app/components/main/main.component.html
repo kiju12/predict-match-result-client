@@ -66,10 +66,10 @@
         <h3>Formacja: {{homeTeamData.formation}}</h3>
         <table border="1" style="width:100%">
           
-          <tr style="color:orange">
-            <th>Pozycja</th>
-            <th>Punkty umiejętności</th>
-            <th>Imię i nazwisko</th>
+          <tr>
+            <td class="bg-secondary" style="color:orange">Pozycja</td>
+            <td class="bg-secondary" style="color:orange">Punkty umiejętności</td>
+            <td class="bg-secondary" style="color:orange">Imię i nazwisko</td>
           </tr>
           <tr *ngFor="let player of homeTeamData.players">
             <td class="bg-secondary">{{player.position | position}}</td>
@@ -90,14 +90,14 @@
         <div class="mx-auto " style="width:150px; height:150px">
           <img [src]="awayTeamData.imageLink" style="width: 100%; height: 100%"/>
         </div>
-        <h2 class="text-center btn btn-secondary" style="color:orange;border-radius: 25px;"><font size="5">{{homeTeamData.name}}</font></h2>
+        <h2 class="text-center btn btn-secondary" style="color:orange;border-radius: 25px;"><font size="5">{{awayTeamData.name}}</font></h2>
         <h3 >Skład:</h3>
         <h3>Formacja: {{awayTeamData.formation}}</h3>
         <table border="1" style="width:100%">
           <tr style="color:orange">
-            <th >Pozycja</th>
-            <th>Punkty umiejętności</th>
-            <th>Imię i nazwisko</th>
+            <td class="bg-secondary" style="color:orange">Pozycja</td>
+            <td class="bg-secondary" style="color:orange">Punkty umiejętności</td>
+            <td class="bg-secondary" style="color:orange">Imię i nazwisko</td>
           </tr>
           <tr *ngFor="let player of awayTeamData.players">
             <td class="bg-secondary">{{player.position | position}}</td>
