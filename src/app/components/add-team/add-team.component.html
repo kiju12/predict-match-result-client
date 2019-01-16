@@ -7,12 +7,12 @@
 
 <ng-container *ngIf="fetchedTeam">
   <div class="text-center">
-    <h1><font color="orange">Dodano nową drużynę!</font></h1>
+    <h1 class="bg-secondary text-center"> <font color="orange">Dodano nową drużynę!</font></h1>
     <div>
       <div><img [src]="fetchedTeam.linkToImage"/></div>
       <div>{{fetchedTeam.name}}</div>
     </div>
-    <button (click)="reset()"><font color="orange">Powrót</font></button>
+    <button class = "btn btn-secondary" (click)="reset()"><font color="orange">Powrót</font></button>
   </div>
 
 </ng-container>
@@ -28,12 +28,12 @@
 <ng-container *ngIf="!fetchedTeam && !fetchingInProgress">
   <div class="text-center">
 
-    <div class="bg-secondary text-center"><font color="orange"><b>Identyfikator drużyny FUT</b></font></div>
+    <div class="bg-secondary text-center"><font color="orange"><b><h5>Identyfikator drużyny FUT</h5></b></font></div>
     <input id="fifaIdInput" [(ngModel)]="fifaId" type="number" style="width: 50px"/>
     <div><font color="orange">Identyfikator musi być większy od 0</font></div>
 
     <div class="text-center">
-      <div><font color="orange"><b>Formacja</b></font></div>
+      <div><font color="orange"><b><h5>Formacja</h5></b></font></div>
       <input [(ngModel)]="defNumber" type="number" style="width: 50px"/> -
       <input [(ngModel)]="helpNumber" type="number" style="width: 50px"/> -
       <input [(ngModel)]="attNumber" type="number" style="width: 50px"/>
