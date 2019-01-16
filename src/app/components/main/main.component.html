@@ -32,10 +32,12 @@
 
 
   <!--wiadomość po typowaniu START-->
+  <div class="container">
   <div *ngIf="predictResultMessage; else predictButton" class="container text-center">
-    <h2 class="btn btn-secondary" style="border: 10px;padding:5px; border-radius: 25px;"><font size="5" color="orange">{{predictResultMessage}}</font></h2>
+    <h2 class="bg-secondary text-center" style="border: 10px;padding-bottom:10px; border-radius: 25px;"><font size="5" color="orange">{{predictResultMessage}}</font></h2>
     <h2><button class="btn btn-secondary" style="border: 10px;padding:5px; border-radius: 5px;" (click)="reset()"><font color="orange">Reset</font></button></h2>
   </div>
+</div>
   <!--wiadomosc po typowaniu END-->
 
 
@@ -69,7 +71,6 @@
             <th>Punkty umiejętności</th>
             <th>Imię i nazwisko</th>
           </tr>
-          <p></p>
           <tr *ngFor="let player of homeTeamData.players">
             <td class="bg-secondary">{{player.position | position}}</td>
             <td>{{player.rating}}</td>
@@ -98,7 +99,6 @@
             <th>Punkty umiejętności</th>
             <th>Imię i nazwisko</th>
           </tr>
-          <p></p>
           <tr *ngFor="let player of awayTeamData.players">
             <td class="bg-secondary">{{player.position | position}}</td>
             <td>{{player.rating}}</td>
