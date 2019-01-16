@@ -1,39 +1,50 @@
+
+<div class="container">
+    <div style = "background-color: gray">
 <ng-container *ngIf="fetchingInProgress">
-  <div class="text-center">Pobranie danych o drużynie z bazy EA SPORTS</div>
+  <div class="text-center"><font color="orange">Pobranie danych o drużynie z bazy EA SPORTS</font></div>
 </ng-container>
 
 <ng-container *ngIf="fetchedTeam">
   <div class="text-center">
-    <h1>Dodano nową drużynę!</h1>
+    <h1><font color="orange">Dodano nową drużynę!</font></h1>
     <div>
       <div><img [src]="fetchedTeam.linkToImage"/></div>
       <div>{{fetchedTeam.name}}</div>
     </div>
-    <button (click)="reset()">Powrót</button>
+    <button (click)="reset()"><font color="orange">Powrót</font></button>
   </div>
 
 </ng-container>
 
-<ng-container *ngIf="fetchError && !fetchingInProgress">
-  <div class="text-center">Brak drużyny o podanym ID</div>
-</ng-container>
+
+  <ng-container *ngIf="fetchError && !fetchingInProgress">
+   <div class="text-center">
+     <div class="btn btn-danger text-center" style="margin: auto;">Brak drużyny o podanym ID</div>
+   </div>
+  </ng-container>
+
 
 <ng-container *ngIf="!fetchedTeam && !fetchingInProgress">
   <div class="text-center">
 
-    <div class="text-center">Identyfikator drużyny FUT</div>
+    <div class="bg-secondary text-center"><font color="orange"><b>Identyfikator drużyny FUT</b></font></div>
     <input id="fifaIdInput" [(ngModel)]="fifaId" type="number" style="width: 50px"/>
-    <div>Identyfikator musi być większy od 0</div>
+    <div><font color="orange">Identyfikator musi być większy od 0</font></div>
 
     <div class="text-center">
-      <div>Formacja</div>
+      <div><font color="orange"><b>Formacja</b></font></div>
       <input [(ngModel)]="defNumber" type="number" style="width: 50px"/> -
       <input [(ngModel)]="helpNumber" type="number" style="width: 50px"/> -
       <input [(ngModel)]="attNumber" type="number" style="width: 50px"/>
-      <div>OBR-POM-ATT</div>
+      <div><font color="orange">OBR-POM-ATT</font></div>
     </div>
-
-    <button (click)="fetchTeam()" [disabled]="isNotValid()">Pobierz drużynę</button>
+<div class="text-center">
+    <button class = "btn btn-secondary" (click)="fetchTeam()" [disabled]="isNotValid()"><font color="orange">Pobierz drużynę</font></button>
+</div>
+    
 
   </div>
 </ng-container>
+</div>
+</div>
