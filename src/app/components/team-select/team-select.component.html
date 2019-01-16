@@ -6,32 +6,36 @@
 
   <div class="col-4 offset-1 p-0 "style="margin-top:40px">
     <label class="bg-secondary" style="border: 10px;padding: 4px; border-radius: 25px;" for="homeTeamSelect"><font color="orange">Drużyna domowa</font></label>
-    <select id="homeTeamSelect"
+    <form>
+    <select name="cars" class="custom-select" id="homeTeamSelect"
             [(ngModel)]="homeTeamId"
             (change)="onHomeTeamSelectChange()"
             [disabled]="disable"
             style="width: 100%">
-      <option selected [value]="0">-</option>
+      <option selected [value]="0">Wybierz drużyne</option>
       <option *ngFor="let team of teams" [value]="team.id" [disabled]="team.selected">
         {{team.name}}
       </option>
     </select>
+    </form>
   </div>
 <div class="col-sm-2" style="padding:35px;">
   <div class="text-center bg-secondary" style="border: 5px;padding: 4px; border-radius: 10px; margin-top:40px;margin-left:5px;"><font color="orange">VS</font></div>
 </div>
   <div class="col-4" style="margin-top:40px">
     <label class="bg-secondary" style="border: 10px;padding: 4px; border-radius: 25px;" for="awayTeamSelect"><font color="orange">Drużyna wyjazdowa</font>   </label>
-    <select id="awayTeamSelect"
+    <form>
+    <select name="cars" class="custom-select" id="awayTeamSelect"
             [(ngModel)]="awayTeamId"
             (change)="onAwayTeamSelectChange()"
             [disabled]="disable"
             style="width: 100%">
-      <option selected [value]="0">-</option>
+      <option selected [value]="0">Wybierz drużyne</option>
       <option *ngFor="let team of teams" [value]="team.id" [disabled]="team.selected">
         {{team.name}}
       </option>
     </select>
+    </form>
   </div>
 
 </div>
