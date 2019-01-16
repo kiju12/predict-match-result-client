@@ -26,7 +26,7 @@
   </div>
 
   <div style="padding: 10px;" *ngIf="matchesData.length !== 0" class="text-center">
-    <div style="margin-bottom: 5px;"*ngFor="let matchData of matchesData" class="text-center help-border">
+    <div style="margin-bottom: 5px; max-width: 10%;" *ngFor="let matchData of matchesData" class="border border-dark  text-center mx-auto p.0 bg bg-secondary">
       {{matchData.homeGoals}}-{{matchData.awayGoals}}
       <button  class = "btn btn-secondary" (click)="remove(matchData)"><font color="orange">Usuń</font></button>
     </div>
