@@ -1,5 +1,5 @@
 
-<div class="container" style="background-color:grey;">
+<div class="container" style="background-color:grey; padding-bottom:15px;">
 
 <!--komunikat podczas ladowania druzyn START-->
 <ng-container *ngIf="teamLoading; else predictInterface">
@@ -32,9 +32,9 @@
 
 
   <!--wiadomość po typowaniu START-->
-  <div *ngIf="predictResultMessage; else predictButton" class="text-center">
-    <h2>{{predictResultMessage}}</h2>
-    <button (click)="reset()">Reset</button>
+  <div *ngIf="predictResultMessage; else predictButton" class="container text-center">
+    <h2 class="btn btn-secondary" style="border: 10px;padding:5px; border-radius: 25px;"><font size="5" color="orange">{{predictResultMessage}}</font></h2>
+    <h2><button class="btn btn-secondary" style="border: 10px;padding:5px; border-radius: 5px;" (click)="reset()"><font color="orange">Reset</font></button></h2>
   </div>
   <!--wiadomosc po typowaniu END-->
 
@@ -50,7 +50,7 @@
       </div> 
     </ng-template>
     <!--komunikat o braku wyboru druzyny END-->
-    <div class="row text-center">
+    <div class="row text-center padding-bottom:15px;">
     
     <!--lewa druzyna (HOME) START-->
     <div class="col-6" style="margin-top:20px">
@@ -59,19 +59,21 @@
         <div class="mx-auto " style="width:150px; height:150px">
           <img [src]="homeTeamData.imageLink" style="width: 100%; height: 100%"/>
         </div>
-        <h2 class="text-center">{{homeTeamData.name}}</h2>
+        <h2 class="text-center btn btn-secondary" style="color:orange;border-radius: 25px;"><font size="5">{{homeTeamData.name}}</font></h2>
         <h3>Skład:</h3>
         <h3>Formacja: {{homeTeamData.formation}}</h3>
         <table border="1" style="width:100%">
-          <tr>
+          
+          <tr style="color:orange">
             <th>Pozycja</th>
             <th>Punkty umiejętności</th>
             <th>Imię i nazwisko</th>
           </tr>
+          <p></p>
           <tr *ngFor="let player of homeTeamData.players">
-            <td>{{player.position | position}}</td>
+            <td class="bg-secondary">{{player.position | position}}</td>
             <td>{{player.rating}}</td>
-            <td>{{player.firstname}} {{player.lastname}}</td>
+            <td class="bg-secondary">{{player.firstname}} {{player.lastname}}</td>
           </tr>
         </table>
 
@@ -87,19 +89,20 @@
         <div class="mx-auto " style="width:150px; height:150px">
           <img [src]="awayTeamData.imageLink" style="width: 100%; height: 100%"/>
         </div>
-        <h2 class="text-center">{{awayTeamData.name}}</h2>
-        <h3>Skład:</h3>
+        <h2 class="text-center btn btn-secondary" style="color:orange;border-radius: 25px;"><font size="5">{{homeTeamData.name}}</font></h2>
+        <h3 >Skład:</h3>
         <h3>Formacja: {{awayTeamData.formation}}</h3>
         <table border="1" style="width:100%">
-          <tr>
-            <th>Pozycja</th>
+          <tr style="color:orange">
+            <th >Pozycja</th>
             <th>Punkty umiejętności</th>
             <th>Imię i nazwisko</th>
           </tr>
+          <p></p>
           <tr *ngFor="let player of awayTeamData.players">
-            <td>{{player.position | position}}</td>
+            <td class="bg-secondary">{{player.position | position}}</td>
             <td>{{player.rating}}</td>
-            <td>{{player.firstname}} {{player.lastname}}</td>
+            <td class="bg-secondary">{{player.firstname}} {{player.lastname}}</td>
           </tr>
         </table>
 
