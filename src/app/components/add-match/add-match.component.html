@@ -1,6 +1,8 @@
 <div class="container" style="background-color:grey;margin-top:15px;padding-bottom:15px">
-<ng-container *ngIf="matchesSaved">
-  <div class="text-center">Mecze zapisane</div>
+  <ng-container *ngIf="matchesSaved">
+  <div class="container text-center" style="padding-top:15px;">
+  <div class="text-center btn btn-secondary mx-auto p.0" style="padding:5px;text-align"><font color="orange"><b>Mecze zapisane</b></font></div>
+  </div>
 </ng-container>
 
 <ng-container *ngIf="teamsLoading; else addInterface">
